@@ -99,7 +99,7 @@ export default function LoginPage() {
             localStorage.setItem('accessToken', res.accessToken)
             localStorage.setItem('authStatus', "true")
 
-            window.location.assign("http://localhost:3000/dashboard/app")
+            window.location.assign("https://digi-frontend-six.vercel.app/dashboard/app")
             // navigate('/dashboard', { replace: true });
 
         }
