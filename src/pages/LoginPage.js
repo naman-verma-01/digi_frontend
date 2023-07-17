@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Helmet } from 'react-helmet-async';
@@ -49,6 +49,10 @@ export default function LoginPage() {
 
     const [user, setUser] = useState({ email: "", password: '' })
 
+    useEffect(()=>{
+        localStorage.removeItem('authStatus')
+        localStorage.removeItem('accessToken')
+    },[])
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
