@@ -1,4 +1,4 @@
-## Invoice Dashboard [(Vercel)](https://techno-kart-frontend.vercel.app/)
+## Invoice Dashboard [(Vercel)](https://digi-frontend-six.vercel.app/)
 
 
 ## Installation
@@ -34,7 +34,7 @@ The main .js files
   cd ./src/routes.js
 ```
 
-### Directory with all main pages of this project - [HomePage, Invoices Page, New Invoices Page, Update Invoice Page]
+### Directory with all main pages of this project - [HomePage, User Page, New User Page, Update User Page,Login, Register Page]
 ```bash
   cd ./src/pages/
 ```
