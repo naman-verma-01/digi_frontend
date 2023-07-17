@@ -17,6 +17,7 @@ import {
 } from '@mui/material';
 // components
 import { LoadingButton } from '@mui/lab';
+import Authenticate from './Authenticate';
 
 
 // ----------------------------------------------------------------------
@@ -112,11 +113,12 @@ export default function NewInvoice() {
 
  
 
-// function to handle calling new Invoice API
+// function to handle calling new User API
 const handleClick = async () => {
-    /* eslint-disable no-useless-escape */
 
-    console.log("CHECK",(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email)))
+    // basic validation
+
+
     let string = ''
     if (user.name === '') {
         string += ' NAME'
@@ -146,7 +148,6 @@ const handleClick = async () => {
         setInfoMissingOpen(true)
     }
     else {
-        // console.log("USERSSS,", new Date(user.dob).getTime())
         const bodyData = { ...user, dob: new Date(user.dob).getTime() }
 
         const token = localStorage.getItem('accessToken')
@@ -189,6 +190,7 @@ const handleClick = async () => {
 
 return (
     <>
+        <Authenticate/>
         <Helmet>
             <title> New User </title>
         </Helmet>

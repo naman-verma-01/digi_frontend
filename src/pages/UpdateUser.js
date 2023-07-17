@@ -17,6 +17,7 @@ import {
 // components
 import { LoadingButton } from '@mui/lab';
 import { useParams } from 'react-router-dom';
+import Authenticate from './Authenticate';
 
 
 // ----------------------------------------------------------------------
@@ -60,7 +61,7 @@ export default function UpdateInvoice(props) {
         getUserById(params.id)
     }, [])
 
- 
+
 
     const getUserById = async (id) => {
 
@@ -120,7 +121,6 @@ export default function UpdateInvoice(props) {
         const token = localStorage.getItem('accessToken')
 
 
-        // bodyData.date = new Date(bodyData.date).getTime()
         let res = await fetch('https://digi-backend.vercel.app/updateUser', {
             method: "PUT",
             headers: {
@@ -149,6 +149,8 @@ export default function UpdateInvoice(props) {
 
     return (
         <>
+            <Authenticate />
+
             <Helmet>
                 <title> Update User </title>
             </Helmet>

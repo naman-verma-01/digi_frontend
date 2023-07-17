@@ -25,6 +25,7 @@ import Iconify from '../components/iconify';
 import Scrollbar from '../components/scrollbar';
 // sections
 import { UserListHead, UserListToolbar } from '../sections/@dashboard/user';
+import Authenticate from './Authenticate';
 // mock
 
 // ----------------------------------------------------------------------
@@ -172,7 +173,7 @@ export default function Invoices() {
         setUsers(res.data)
     }
 
-    // function to call delete invoice API using the data of the specified invoice
+    // function to call delete user API using the data of the specified user
     const deleteInvoice = async (_id) => {
         const token = localStorage.getItem('accessToken')
 
@@ -232,6 +233,8 @@ export default function Invoices() {
 
     return (
         <>
+        <Authenticate/>
+
             <Helmet>
                 <title> Users </title>
             </Helmet>

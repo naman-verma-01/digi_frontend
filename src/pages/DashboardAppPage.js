@@ -20,15 +20,14 @@ import {
   AppCurrentSubject,
   AppConversionRates,
 } from '../sections/@dashboard/app';
+import Authenticate from './Authenticate';
 
 
 // ----------------------------------------------------------------------
 
 export default function DashboardAppPage() {
-  const navigate = useNavigate()
   const theme = useTheme();
   const [totalUsers, setTotalUsers] = useState(0)
-  // const [totalAmount, setTotalAmount] = useState(0)
 
 
   useEffect(() => {
@@ -52,18 +51,11 @@ export default function DashboardAppPage() {
 
     res = await res.json();
 
-
-    // let allInvoices = res.data.map((element) => element.invoiceData)
-    // allInvoices = allInvoices.flat()
-
-
-    // const totalAmountofInvoice = res.data.reduce((arr, element) => arr + element.amount,0)
-
     setTotalUsers(res.data.length)
-    // setTotalAmount(totalAmountofInvoice)
   }
   return (
     <>
+      <Authenticate />
       <Helmet>
         <title> Dashboard </title>
       </Helmet>
@@ -77,13 +69,16 @@ export default function DashboardAppPage() {
         </Typography>
 
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={6}>
-            <AppWidgetSummary title="Total Users" total={totalUsers} icon={'icon-park-outline:order'} />
+          <Grid item xs={12} sm={6} md={4}>
+            <AppWidgetSummary title="Total Users" total={totalUsers} color="success" icon={'icon-park-outline:order'} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <AppWidgetSummary title="New Users" total={totalUsers - 2} color="info" icon={'icon-park-outline:order'} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <AppWidgetSummary title="Active Users" total={totalUsers - 4} color="error" icon={'icon-park-outline:order'} />
           </Grid>
 
-          {/* <Grid item xs={12} sm={6} md={6}>
-            <AppWidgetSummary title="Total Invoice Amount" total={totalAmount} color="info" icon={'fluent-mdl2:completed'} />
-          </Grid> */}
 
 
           <Grid item xs={12} md={6} lg={8}>

@@ -9,7 +9,6 @@ import { LoadingButton } from '@mui/lab';
 // hooks
 import useResponsive from '../hooks/useResponsive';
 // components
-import Logo from '../components/logo';
 import Iconify from '../components/iconify';
 // sections
 
@@ -44,7 +43,6 @@ const StyledContent = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function LoginPage() {
-    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false)
     const mdUp = useResponsive('up', 'md');
 
@@ -69,7 +67,6 @@ export default function LoginPage() {
                 color="red"
                 onClick={handleClose}
             >
-                {/* <CloseIcon fontSize="small" /> */}
                 Close
             </IconButton>
         </>
@@ -91,7 +88,6 @@ export default function LoginPage() {
         console.log("response", res, user)
         if (res.msg === 'failed' || res.data.length === 0) {
 
-            // alert('Login Failed')
             setOpen(true)
 
         } else {
@@ -100,7 +96,6 @@ export default function LoginPage() {
             localStorage.setItem('authStatus', "true")
 
             window.location.assign("https://digi-frontend-six.vercel.app/dashboard/app")
-            // navigate('/dashboard', { replace: true });
 
         }
 
@@ -114,7 +109,7 @@ export default function LoginPage() {
             <StyledRoot>
 
 
-                {mdUp && (
+            {mdUp && (
                     <StyledSection>
                         <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
                             Hi, Welcome Back 😀
@@ -126,7 +121,7 @@ export default function LoginPage() {
                 <Container maxWidth="sm">
                     <StyledContent>
                         <Typography variant="h4" align='center' gutterBottom>
-                            Log In WeShip
+                            Log In
                         </Typography>
 
                         <Typography variant="body2" align='center' sx={{ mb: 5 }}>

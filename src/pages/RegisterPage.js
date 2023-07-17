@@ -9,7 +9,6 @@ import { LoadingButton } from '@mui/lab';
 // hooks
 import useResponsive from '../hooks/useResponsive';
 // components
-import Logo from '../components/logo';
 import Iconify from '../components/iconify';
 // sections
 
@@ -44,7 +43,6 @@ const StyledContent = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function RegisterPage() {
-    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false)
     const mdUp = useResponsive('up', 'md');
 
@@ -74,7 +72,6 @@ export default function RegisterPage() {
 
             window.location.assign("https://digi-frontend-six.vercel.app/dashboard/app")
 
-            // navigate('/dashboard', { replace: true });
 
         }
 
@@ -91,7 +88,7 @@ export default function RegisterPage() {
                 {mdUp && (
                     <StyledSection>
                         <Typography variant="h4" sx={{ px: 5, mt: 10, mb: 1 }}>
-                            Hi, Welcome to WeShip 👋<br/>
+                            Hi, Welcome 👋<br/>
                             Register and lets get started 🚀
                         </Typography>
                         <img src="/assets/illustrations/illustration_login.png" alt="login" />
@@ -101,7 +98,7 @@ export default function RegisterPage() {
                 <Container maxWidth="sm">
                     <StyledContent>
                         <Typography variant="h4" align='center' gutterBottom>
-                            Sign in to WeShip
+                            Sign In
                         </Typography>
 
                      
